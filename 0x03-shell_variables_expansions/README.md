@@ -172,6 +172,24 @@ adds the two numbers stored in the environment variables WATER and STIR and prin
   gamachu@ubuntu:~$ ./103-water_and_stir
   shtbeolhc
   gamachu@ubuntu:~$
+
   ```
+
+`Explanation of my solution:`
+
+This script performs base conversion and addition directly in a single line. Let me explain how it works:
+
+1. `echo $WATER | tr 'water' '01234'`: This command translates each character in the string stored in the environment variable $WATER from the custom base "water" to the numerical base of 0-4.
+
+2. `5#$(...)`: This tells Bash to interpret the result of the conversion as a number in base 5.
+
+3. `$((...))`: This performs arithmetic addition of the two converted values.
+
+4. `printf %o ...`: This converts the resulting sum back into octal representation.
+
+5. `tr '01234567' 'bestchol'`: Finally, this command translates each digit in the octal representation to the corresponding character in the custom base "bestchol".
+
+So, in summary, the script translates each input string from its custom base to a numerical representation, adds them together, converts the result back to a string in a different custom base, and prints it out.
+
 ---
-**Author**: Gamachu AD
+**Author**: `Gamachu AD`
