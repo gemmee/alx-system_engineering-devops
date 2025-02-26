@@ -1,0 +1,22 @@
+# steps to do this task
+
+1. Access your server
+	ssh ubuntu@3.89.123.74
+
+2. Switch to the ubuntu user
+	sudo su - ubuntu
+
+3. Create the .ssh directory (if it doesn't exist)
+   in the ubuntu user's home directory
+	mkdir -p ~/.ssh
+
+4. Add the provided public key to `authorized_keys` file (if
+   it doesn't exist create it in .ssh directory)
+	echo "<the provided pub key>" >> ~/.ssh/authorized_keys
+
+5. Set the correct permissions for the authorized_keys file
+	chmod 600 ~/.ssh/authorized_keys
+
+6. Verify SSH access
+	As you don't have the private key, the only way to confirm that the key
+	was added correctly is to pass the checker.
